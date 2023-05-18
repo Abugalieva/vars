@@ -1,0 +1,18 @@
+<header id="header" class="header fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+    <a href="index.html" class="logo d-flex align-items-center">
+      <span>VarsityHub</span>
+    </a>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Главная</a></li>
+        <li><a class="nav-link scrollto" href="#about">О нас</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'settings_page' %}">{{user.first_name}} {{user.last_name}}</a>
+        </li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/auth/logout">Выйти</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

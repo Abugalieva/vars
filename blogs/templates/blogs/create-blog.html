@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <title>Create Blog Form</title>
+  <style>
+      .field-wrapper {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+  </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% include 'nav.html' %}
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="col-12">
+                <form name="create_blog" method="POST" novalidate>
+              <h2>Create new blog</h2>
+              {% csrf_token %}
+                {% for field in form %}
+                    <div class="field-wrapper">
+                        {{ field.label_tag }} {{ field }}
+                        <div class="text-danger">
+                        {{ field.errors }}
+                        </div>
+                    </div>
+                {% endfor %}
+              <button class="btn btn-primary d-block col-12" type="submit">Create</button>
+            </form>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+

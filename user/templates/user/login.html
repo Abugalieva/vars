@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <title>Login</title>
+  <style>
+      .field-wrapper {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .login-row {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  </style>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 login-row">
+            <div class="col-12">
+                <form name="login" method="POST" novalidate>
+              <h2>Login</h2>
+              {% csrf_token %}
+                {% for field in form %}
+                    <div class="field-wrapper">
+                        {{ field.label_tag }} {{ field }}
+                        <div class="text-danger">
+                        {{ field.errors }}
+                        </div>
+                    </div>
+                {% endfor %}
+              <button class="btn btn-primary d-block col-12" type="submit">Login</button>
+                <a href="/auth/register/" class="d-block text-center mt-4">You dont have an account? Register.</a>
+            </form>
+            </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}
+
+
