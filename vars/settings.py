@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-d2^h(9rq6@b6&$(pc54_%yegh046$ug+hx$_gc1v8iv+jqqdct
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'anarina.pythonanywhere.com/'
+    'anarina.pythonanywhere.com'
 ]
 
 
@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 # CORS_ALLOWED_ORIGINS = [
 #     'https://anarina.pythonanywhere.com/'
 # ]
