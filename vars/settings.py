@@ -26,13 +26,14 @@ SECRET_KEY = 'django-insecure-d2^h(9rq6@b6&$(pc54_%yegh046$ug+hx$_gc1v8iv+jqqdct
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'anarina.pythonanywhere.com/'
+    'anarina.pythonanywhere.com'
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'corsheaders',
     'user',
     'blogs'
 ]
